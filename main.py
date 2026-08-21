@@ -6,6 +6,7 @@ from aiogram.types import Message
 
 from config import BOT_TOKEN
 from bot.keyboards.main_menu import main_menu
+from database.init_db import init_db
 
 from bot.handlers.profile import router as profile_router
 from bot.handlers.referral import router as referral_router
@@ -66,6 +67,7 @@ async def start_handler(message: Message):
 
 
 async def main():
+      init_db()
     print("Bot ishga tushdi...")
 
     dp.include_router(profile_router)
