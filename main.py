@@ -3,6 +3,7 @@ import asyncio
 from aiogram import Bot, Dispatcher
 from aiogram.filters import CommandStart
 from aiogram.types import Message
+from database.init_db import init_db
 
 from config import BOT_TOKEN
 
@@ -77,6 +78,7 @@ async def start_handler(message: Message):
 
 
 async def main():
+        init_db()
     print("Bot ishga tushdi...")
 
     dp.include_router(
