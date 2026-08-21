@@ -67,7 +67,8 @@ async def start_handler(message: Message):
 
 
 async def main():
-      init_db()
+    init_db()
+
     print("Bot ishga tushdi...")
 
     dp.include_router(profile_router)
